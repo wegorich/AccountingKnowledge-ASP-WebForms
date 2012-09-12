@@ -1,0 +1,27 @@
+﻿.selection
+{
+    margin: 5px;
+}
+.selection li
+{
+    line-height: 20px;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+.selection a
+{
+    color: #A8A8A8;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 0px 5px !important;
+    font-weight: bold;
+}
+.selection a.selected
+{
+    background-color: #4D90FE!Important;
+    color: white;
+}
+.selection a:hover
+{
+    background-color: whitesmoke;
+}

@@ -1,0 +1,20 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NestedMain.master" AutoEventWireup="true"
+    CodeBehind="Profile.master.cs" Inherits="AKSite.Profile.Profile" %>
+
+<asp:Content ID="pageTitle" ContentPlaceHolderID="title" runat="server">
+    Личный кабинет:
+    <asp:ContentPlaceHolder ID="profileTitle" runat="server" />
+</asp:Content>
+<asp:Content ID="pageHead" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript" src="../Script/MyDialogs.js"></script>
+    <script src="../Script/script.js" type="text/javascript"></script>
+</asp:Content>
+<asp:Content ID="pageLeft" ContentPlaceHolderID="left" runat="server">
+    <asp:SiteMapDataSource ID="SiteMapProfile" runat="server" ShowStartingNode="False"
+        StartingNodeUrl="~/Profile/" />
+    <asp:Menu ID="subMenu" runat="server" DataSourceID="SiteMapProfile">
+    </asp:Menu>
+</asp:Content>
+<asp:Content ID="pageCont" ContentPlaceHolderID="cont" runat="server">
+    <asp:ContentPlaceHolder ID="profileCont" runat="server" />
+</asp:Content>

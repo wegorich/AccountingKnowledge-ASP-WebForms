@@ -1,0 +1,85 @@
+﻿#header
+{
+    background-color: #2D2D2D;
+    border-bottom: 1px solid black;
+    font-size: 24px;
+    height: 30px;
+}
+.panel, .reg
+{
+    position: absolute;
+    white-space: nowrap;
+    top: 0;
+}
+.panel
+{
+    left: 0;
+    padding-left: 8px;
+}
+.panel .mainMenu
+{
+    margin-left:5px;
+}
+.reg
+{
+    right: 0;
+    padding-right: 30px;
+}
+
+.mainMenu
+{
+    position: static;
+}
+
+.panel a.static.selected
+{
+    font-weight: bold;
+    color: White !important;
+}
+
+.panel ul, .reg ol
+{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.panel li, .reg li
+{
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    line-height: 30px;
+    margin-left: -4px;
+    margin-right: -4px;
+    padding: 0;
+    vertical-align: top;
+}
+.panel li a, .reg li a,#loginName:hover
+{
+    color: #CCC;
+}
+ 
+.panel li a, .reg li a, #loginName
+{
+    text-decoration: none !important;
+    font: 13px/30px Arial,sans-serif;
+    margin: 0;
+}
+.panel li a span, .reg li a span, #loginName
+{
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    display: block;
+    margin: 0;
+    padding: 0 5px;
+    position: relative;
+}
+.panel li a span:hover, .reg li a span:hover
+{
+    background-color: #4a4a4a;
+}
+#loginName
+{
+    color:white;
+}

@@ -1,0 +1,17 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="NestedMain.master.cs"
+    Inherits="AKSite.NestedMain" %>
+
+<asp:Content ID="pageTitle" ContentPlaceHolderID="title" runat="server">
+    <asp:ContentPlaceHolder ID="title" runat="server" />
+</asp:Content>
+<asp:Content ID="pageHead" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</asp:Content>
+<asp:Content ID="pageCont" ContentPlaceHolderID="cont" runat="server">
+    <div id="leftmenu">
+        <asp:ContentPlaceHolder ID="left" runat="server" />
+    </div>
+    <div id="pagecontent">
+        <asp:ContentPlaceHolder ID="cont" runat="server" />
+    </div>
+</asp:Content>

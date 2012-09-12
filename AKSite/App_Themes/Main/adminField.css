@@ -1,0 +1,29 @@
+﻿.adminField
+{
+    vertical-align: top;
+    border-bottom: 1px solid #E5E5E5;
+    padding:5px 15px 5px 15px;
+}
+.adminField li
+{
+    display: inline-block;
+}
+.adminField .adminTheme li
+{
+    display: block;
+}
+.adminField b
+{
+    font-size: 130%;
+    color:#D14836;
+}
+.adminField a
+{
+    font-size: 105%;
+    color:#D14836;
+    text-decoration: none;
+}
+.adminField a:hover
+{
+    color:#D14700;
+}

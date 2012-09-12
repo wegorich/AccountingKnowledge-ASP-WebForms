@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/" title="Главная"  description="Это домашняя страничка сайта">
+    <siteMapNode url="~/Profile/" title="Профиль" roles="User" description="Пользовательский профиль" >
+      <siteMapNode url="~/Profile/ResumeConstructor.aspx" title="Создать резюме"  description="Страничка работы с резюме" />
+      <siteMapNode url="~/Profile/Default.aspx" title="Мои резюме"  description="Пользовательский профиль" />
+    </siteMapNode>
+    <siteMapNode url="~/Search/" title="Поиск" roles="Manager" description="Поиск резюме" >
+      <siteMapNode url="~/Search/Default.aspx" title="Поиск"  description="Поиск резюме" />
+    </siteMapNode>
+    <siteMapNode url="~/Admin/" title="Админка" roles="Admin" description="Администраторский раздел" >
+       <siteMapNode url="~/Admin/Default.aspx" title="Область знания"  description="Страничка работы с областью знаний" />
+      <siteMapNode url="~/Admin/Skill.aspx" title="Навыки"  description="Страничка работы с навыками" />
+      <siteMapNode url="~/Admin/Report.aspx" title="Отчеты"  description="Страничка отчетов" />
+      <siteMapNode url="~/Admin/Users.aspx" title="Пользователи" description="Управление пользователями"/>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

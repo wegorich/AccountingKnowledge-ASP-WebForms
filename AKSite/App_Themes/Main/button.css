@@ -1,0 +1,31 @@
+﻿.btn
+{
+    border: 1px solid #45688E;
+    background-color: #4D90FE;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    display: inline-block;
+    position: relative;
+}
+.btn input[type=submit]
+{
+    padding: 2px;
+    border: none;
+    color: white;
+    text-shadow: 0 1px 0 #45688E;
+    background-color: transparent;
+    display: block;
+}
+.btn:hover
+{
+    background-color: #357AE8;
+    background-image: linear-gradient(top,#4d90fe,#357ae8);
+}
+.btn:active
+{
+    background-color: #45688E;
+}

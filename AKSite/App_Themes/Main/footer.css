@@ -1,0 +1,21 @@
+﻿#footer
+{
+    background-color:Silver;
+    border-top: 1px solid #999999;
+    margin: auto;
+    margin-top: -41px;
+    height: 40px;
+    clear: both;
+    color:Gray;
+    text-align: center;
+}
+#footer span
+{
+      line-height:37px;
+}
+.footer_guarantor
+{
+     height: 40px;
+    clear: both;
+    text-align: right;
+}

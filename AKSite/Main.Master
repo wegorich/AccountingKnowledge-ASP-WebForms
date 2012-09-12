@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="AKSite.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server" />
+    </title>
+    <link rel="Accounting Knowledge" href="favicon.ico" />
+    <script src="../Script/jquery.min.js" type="text/javascript"></script>
+    <script src="../Script/jquery-ui.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body>
+    <div id="page">
+        <form id="mainFrom" runat="server">
+        <div id="header">
+            <asp:SiteMapDataSource ID="SiteMapMain" runat="server" ShowStartingNode="False" />
+            <asp:Menu ID="mainMenu" runat="server" DataSourceID="SiteMapMain" MaximumDynamicDisplayLevels="0"
+                StaticItemFormatString="{0}" StaticMenuItemStyle-ItemSpacing="0" DynamicSelectedStyle="mainMenuClass"
+                OnMenuItemDataBound="MainMenuMenuItemDataBound" 
+                meta:resourcekey="mainMenuResource1">
+            </asp:Menu>
+            <div class="reg">
+                <ol>
+                    <li>
+                        <asp:LoginName ID="loginName" runat="server" 
+                            meta:resourcekey="loginNameResource1" />
+                    </li>
+                    <li>
+                        <asp:LoginStatus ID="loginStatus" runat="server" LoginText="<span>Вход</span>" 
+                            LogoutText="<span>Выход</span>" meta:resourcekey="loginStatusResource1" />
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div id="content">
+            <asp:ContentPlaceHolder ID="cont" runat="server" />
+        </div>
+        </form>
+        <div class="footer_guarantor">
+        </div>
+    </div>
+    <div id="footer">
+        <asp:Label ID="lblFooter" runat="server" meta:resourcekey="lblFooterResource1"> <b>Accounting Knowledge</b> Егора Малькевича © 2011. Все права защищены.</asp:Label>
+    </div>
+</body>
+</html>

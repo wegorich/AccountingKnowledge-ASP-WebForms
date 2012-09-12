@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NestedMain.master" AutoEventWireup="true"
+    CodeBehind="Search.master.cs" Inherits="AKSite.Search.Search" %>
+
+<asp:Content ID="pageTitle" ContentPlaceHolderID="title" runat="server">
+    <asp:ContentPlaceHolder ID="searchTitle" runat="server" />
+</asp:Content>
+<asp:Content ID="pageHead" ContentPlaceHolderID="head" runat="server">
+    <script src="../Script/script.js" type="text/javascript"></script>
+</asp:Content>
+<asp:Content ID="pageLeft" ContentPlaceHolderID="left" runat="server">
+    <div class="searchMenu">
+        <asp:Label ID="lblAge" runat="server" Text="Возраст" 
+            meta:resourcekey="lblAgeResource1"></asp:Label>
+        <div class="age itemPadding">
+            <asp:DropDownList ID="yearsStart" CssClass="years" runat="server" OnPreRender="AgeStartPreRender"
+                Width="45%" meta:resourcekey="yearsStartResource1">
+            </asp:DropDownList>
+            <div class="years center">
+                -</div>
+            <asp:DropDownList ID="yearsEnd" CssClass="years" runat="server" OnPreRender="AgeEndPreRender"
+                Width="45%" meta:resourcekey="yearsEndResource1">
+            </asp:DropDownList>
+        </div>
+        <asp:CompareValidator ID="yearsCompValidator" runat="server" ErrorMessage="Так нельзя"
+            ControlToCompare="yearsEnd" ControlToValidate="yearsStart" Operator="LessThan"
+            Display="Dynamic" ForeColor="Red" Type="Integer" 
+            meta:resourcekey="yearsCompValidatorResource1" />
+        <span>Сортировать по</span>
+        <div class="itemPadding">
+            <asp:DropDownList CssClass="sortList" ID="sortExpression" runat="server" 
+                OnPreRender="SortExpPreRender" meta:resourcekey="sortExpressionResource1">
+                <asp:ListItem Text="По порядку" Value="Id" meta:resourcekey="ListItemResource1"></asp:ListItem>
+                <asp:ListItem Text="По дате" Value="Date" meta:resourcekey="ListItemResource2"></asp:ListItem>
+                <asp:ListItem Text="По алфавиту" Value="Title" 
+                    meta:resourcekey="ListItemResource3"></asp:ListItem>
+            </asp:DropDownList>
+            <asp:DropDownList CssClass="sortList" ID="sortDirection" runat="server" 
+                OnPreRender="SortDecPreRender" meta:resourcekey="sortDirectionResource1">
+                <asp:ListItem Text="По убыванию" Value="Desc" 
+                    meta:resourcekey="ListItemResource4"></asp:ListItem>
+                <asp:ListItem Text="По возрастанию" Value="Asce" 
+                    meta:resourcekey="ListItemResource5"></asp:ListItem>
+            </asp:DropDownList>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="pageCont" ContentPlaceHolderID="cont" runat="server">
+    <div>
+        <we:Search ID="search" runat="server" ButtonText="Искать" ButtonWidth="130" OnClientClick="return false;" />
+        <asp:Menu ID="selectSearch" runat="server" Orientation="Horizontal" CssClass="selection"
+            OnPreRender="SelectSearchPreRender" 
+            meta:resourcekey="selectSearchResource1">
+            <Items>
+                <asp:MenuItem NavigateUrl="Default.aspx?selection=other" Text="Общие данные" 
+                    Value="other" meta:resourcekey="MenuItemResource1">
+                </asp:MenuItem>
+                <asp:MenuItem NavigateUrl="Default.aspx?selection=field" Text="Области знаний" 
+                    Value="field" meta:resourcekey="MenuItemResource2">
+                </asp:MenuItem>
+                <asp:MenuItem NavigateUrl="Default.aspx?selection=client" Text="Пользователи" 
+                    Value="client" meta:resourcekey="MenuItemResource3">
+                </asp:MenuItem>
+            </Items>
+        </asp:Menu>
+    </div>
+    <asp:ContentPlaceHolder ID="searchCont" runat="server" />
+</asp:Content>

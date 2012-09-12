@@ -1,0 +1,17 @@
+﻿.scrollingCheckBoxList
+{
+    height: 150px;
+    overflow: auto;
+    border: 1px solid #CCC;
+    background: white;
+    border-image: initial;
+}
+.scrollingControlContainer
+{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+#cont_cont_fieldCheckBox li span
+{
+    margin: 0px;
+}

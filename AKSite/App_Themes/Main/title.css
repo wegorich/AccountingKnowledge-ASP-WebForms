@@ -1,0 +1,30 @@
+﻿#title,.itemList th,.stepMenu
+{
+    color:silver;
+    background: whiteSmoke;
+    border: 1px solid #E5E5E5;
+    border-top-width: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 0px;
+    -webkit-border-top-left-radius: 0px;
+    -webkit-border-top-left-radius: 0px;
+    padding:5px 15px;
+}
+#title b,.itemList .tdTitle,.stepMenu .selected,.bold
+{
+    font-size: 130%;
+    color:#D14836;
+}
+.resumeBold {
+    color: #A8A8A8;
+}
+.bold
+{
+    font-size: 100%;
+}

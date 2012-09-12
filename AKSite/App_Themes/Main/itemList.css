@@ -1,0 +1,136 @@
+﻿.itemList
+{
+    vertical-align: top;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-color: gray;
+    empty-cells: show;
+}
+
+.itemList .tdTitle, .itemList .preview
+{
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 5px 15px;
+}
+.itemPadding
+{
+    display: block;
+    padding: 5px;
+}
+.backSearch
+{
+    background: #F7F7F7;
+    border: 1px solid #DAE1E8;
+    border-top: none;
+}
+.itemPadding select
+{
+    width: 95%;
+    border: 1px solid #DAE1E8;
+}
+.reportOneItem
+{
+    font-size: 13px;
+}
+.itemList .preview
+{
+    margin: 3px 0px;
+}
+.itemList .tdTitle
+{
+    color: silver;
+    background: whiteSmoke;
+}
+.itemList .tdContent
+{
+    font-size: 120%;
+    padding: 5px;
+}
+.itemList th, .itemList .tdTitle
+{
+    line-height: 20px;
+}
+.oneItem .caption, .oneItem .name
+{
+    padding: 5px 5px 5px 15px;
+}
+
+.resumeOneItem .name
+{
+    color: silver;
+}
+.resumeOneItem .descr
+{
+    padding: 5px;
+    color: #4F4F4F;
+}
+.resumeOneItem .time
+{
+    width: 150px;
+    font-size: 9px;
+    font-weight: bolder;
+    color: #666;
+}
+.resumeOneItem .theme
+{
+    width: 200px;
+}
+.resumeOneItem .info
+{
+    width: 200px;
+}
+.resumeOneItem .caption
+{
+    font-size: 120%;
+    color: #D14836;
+}
+
+.subItemList
+{
+    padding: 10px;
+    font-size: 9px;
+    color: #666;
+}
+.subItemList tr
+{
+    line-height: 15px;
+}
+.subItemList .subOneItem td
+{
+    border-bottom: none;
+}
+.adminOneItem, .resumeOneItem, .reportOneItem
+{
+    line-height: 20px;
+    color: Gray;
+}
+.padding-left
+{
+    padding-left:10px;
+}
+
+.alt
+{
+    background-color: rgb(248, 248, 248);
+}
+.adminOneItem:hover, .scrollingCheckBoxList li:hover
+{
+    background-color: Gray;
+    color: white !important;
+}
+.adminOneItem b, .resumeOneItem b
+{
+    font-size: 130%;
+    color: #D14836;
+}
+.iconButton
+{
+    padding: 5px;
+    width: 20px;
+    vertical-align: middle;
+}

@@ -1,0 +1,9 @@
+﻿.errorPageContent 
+{
+    font: 15px/22px arial,sans-serif;
+    width: 500px;
+    margin: 25px 0px 0px 150px;
+}
+.errorDescription {
+    margin-top:20px;
+}

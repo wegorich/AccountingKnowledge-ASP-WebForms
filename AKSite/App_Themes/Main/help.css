@@ -1,0 +1,18 @@
+﻿.help
+{
+    padding: 15px;
+    list-style: none;
+}
+.help li
+{
+    padding: 4px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.help li span
+{
+}
+.help b
+{
+    color: Gray;
+}

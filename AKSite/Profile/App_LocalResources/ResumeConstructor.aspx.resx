@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="birthDayResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditButtonResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditButtonResource1.ToolTip" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="emailRegExpValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="emailRegExpValidatorResource1.Text" xml:space="preserve">
+    <value>Email введен неверно</value>
+  </data>
+  <data name="emailRegExpValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fieldCheckBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fieldResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="idResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBirthDayResource1.Text" xml:space="preserve">
+    <value>Дата рождения</value>
+  </data>
+  <data name="lblBirthDayResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDescriptionResource1.Text" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="lblDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblItemBirthDayResource1.Text" xml:space="preserve">
+    <value>Дата рождения</value>
+  </data>
+  <data name="lblItemBirthDayResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblItemEmailResource1.Text" xml:space="preserve">
+    <value>Почта</value>
+  </data>
+  <data name="lblItemEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblItemNameResource1.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="lblItemNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblItemPhoneResource1.Text" xml:space="preserve">
+    <value>Мобильный телефон</value>
+  </data>
+  <data name="lblItemPhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblItemSecondNameResource1.Text" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="lblItemSecondNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMailResource1.Text" xml:space="preserve">
+    <value>Почта</value>
+  </data>
+  <data name="lblMailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMobilePhoneResource1.Text" xml:space="preserve">
+    <value>Мобильный телефон</value>
+  </data>
+  <data name="lblMobilePhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNameResource1.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="lblNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNameResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSecondNameResource1.Text" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="lblSecondNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSecondNameResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSelectFileldResource1.Text" xml:space="preserve">
+    <value>Выберите область знаний</value>
+  </data>
+  <data name="lblSelectFileldResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTitleResource1.Text" xml:space="preserve">
+    <value>Заголовок</value>
+  </data>
+  <data name="lblTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="loginResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MenuItemResource1.Text" xml:space="preserve">
+    <value>Личные данные</value>
+  </data>
+  <data name="MenuItemResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MenuItemResource1.Value" xml:space="preserve">
+    <value>private</value>
+  </data>
+  <data name="MenuItemResource2.Text" xml:space="preserve">
+    <value>Области знания</value>
+  </data>
+  <data name="MenuItemResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MenuItemResource2.Value" xml:space="preserve">
+    <value>fields</value>
+  </data>
+  <data name="MenuItemResource3.Text" xml:space="preserve">
+    <value>Прочие данные</value>
+  </data>
+  <data name="MenuItemResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MenuItemResource3.Value" xml:space="preserve">
+    <value>other</value>
+  </data>
+  <data name="MenuItemResource4.Text" xml:space="preserve">
+    <value>Сохранение</value>
+  </data>
+  <data name="MenuItemResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MenuItemResource4.Value" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="nameRegExpValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="nameRegExpValidatorResource1.Text" xml:space="preserve">
+    <value>Пожалуйство введите настоящее имя</value>
+  </data>
+  <data name="nameRegExpValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Личный кабинет: Конструктор резюме</value>
+  </data>
+  <data name="panelCheckBoxResource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panelCheckBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PassResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="phoneExpressionValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="phoneExpressionValidatorResource1.Text" xml:space="preserve">
+    <value>Пожалуйсто введите корректный телефон</value>
+  </data>
+  <data name="phoneExpressionValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="phoneNumberResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PrivilegyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="resumeFormResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="resumeFormResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="resumeFormResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="resumeFormResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="resumeFormResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="secNameRegExpValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="secNameRegExpValidatorResource1.Text" xml:space="preserve">
+    <value>Пожалуйство введите настоящую фамилию</value>
+  </data>
+  <data name="secNameRegExpValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="stepViewResource1.ScrollDownText" xml:space="preserve">
+    <value>Scroll down</value>
+  </data>
+  <data name="stepViewResource1.ScrollUpText" xml:space="preserve">
+    <value>Scroll up</value>
+  </data>
+  <data name="stepViewResource1.SkipLinkText" xml:space="preserve">
+    <value>Skip Navigation Links</value>
+  </data>
+  <data name="stepViewResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="themeIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="themeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="themeSkilsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdateButtonResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdateButtonResource1.ToolTip" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="UpdateCancelButtonResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdateCancelButtonResource1.ToolTip" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+</root>

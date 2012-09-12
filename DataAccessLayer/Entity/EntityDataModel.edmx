@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AccountingKnowledgeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AccountingKnowledgeDBModelStoreContainer">
+          <EntitySet Name="Client" EntityType="AccountingKnowledgeDBModel.Store.Client" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FieldOfKnowledge" EntityType="AccountingKnowledgeDBModel.Store.FieldOfKnowledge" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Privilegy" EntityType="AccountingKnowledgeDBModel.Store.Privilegy" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Resume" EntityType="AccountingKnowledgeDBModel.Store.Resume" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ResumeTheme" EntityType="AccountingKnowledgeDBModel.Store.ResumeTheme" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Skill" EntityType="AccountingKnowledgeDBModel.Store.Skill" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SkillGroup" EntityType="AccountingKnowledgeDBModel.Store.SkillGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Theme" EntityType="AccountingKnowledgeDBModel.Store.Theme" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Client_Privilegy" Association="AccountingKnowledgeDBModel.Store.FK_Client_Privilegy">
+            <End Role="Privilegy" EntitySet="Privilegy" />
+            <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resume_Client" Association="AccountingKnowledgeDBModel.Store.FK_Resume_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Resume" EntitySet="Resume" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResumeTheme_Resume" Association="AccountingKnowledgeDBModel.Store.FK_ResumeTheme_Resume">
+            <End Role="Resume" EntitySet="Resume" />
+            <End Role="ResumeTheme" EntitySet="ResumeTheme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResumeTheme_Theme" Association="AccountingKnowledgeDBModel.Store.FK_ResumeTheme_Theme">
+            <End Role="Theme" EntitySet="Theme" />
+            <End Role="ResumeTheme" EntitySet="ResumeTheme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Skill_Skill" Association="AccountingKnowledgeDBModel.Store.FK_Skill_Skill">
+            <End Role="SkillGroup" EntitySet="SkillGroup" />
+            <End Role="Skill" EntitySet="Skill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Theme_FieldOfKnowledge" Association="AccountingKnowledgeDBModel.Store.FK_Theme_FieldOfKnowledge">
+            <End Role="FieldOfKnowledge" EntitySet="FieldOfKnowledge" />
+            <End Role="Theme" EntitySet="Theme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Theme_SkillGroup" Association="AccountingKnowledgeDBModel.Store.FK_Theme_SkillGroup">
+            <End Role="SkillGroup" EntitySet="SkillGroup" />
+            <End Role="Theme" EntitySet="Theme" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="ClientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Pass" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SecondName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="BirthDay" Type="date" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PrivilegyID" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FieldOfKnowledge">
+          <Key>
+            <PropertyRef Name="FieldID" />
+          </Key>
+          <Property Name="FieldID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Privilegy">
+          <Key>
+            <PropertyRef Name="PrivilegyID" />
+          </Key>
+          <Property Name="PrivilegyID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Resume">
+          <Key>
+            <PropertyRef Name="ResumeID" />
+          </Key>
+          <Property Name="ResumeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClientID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ResumeTheme">
+          <Key>
+            <PropertyRef Name="ResumeThemeID" />
+          </Key>
+          <Property Name="ResumeThemeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ResumeID" Type="int" Nullable="false" />
+          <Property Name="SkillID" Type="int" Nullable="false" />
+          <Property Name="ThemeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="SkillID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SkillGroup">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Theme">
+          <Key>
+            <PropertyRef Name="ThemeID" />
+          </Key>
+          <Property Name="ThemeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FieldID" Type="int" Nullable="false" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Client_Privilegy">
+          <End Role="Privilegy" Type="AccountingKnowledgeDBModel.Store.Privilegy" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Client" Type="AccountingKnowledgeDBModel.Store.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Privilegy">
+              <PropertyRef Name="PrivilegyID" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="PrivilegyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resume_Client">
+          <End Role="Client" Type="AccountingKnowledgeDBModel.Store.Client" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Resume" Type="AccountingKnowledgeDBModel.Store.Resume" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientID" />
+            </Principal>
+            <Dependent Role="Resume">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResumeTheme_Resume">
+          <End Role="Resume" Type="AccountingKnowledgeDBModel.Store.Resume" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ResumeTheme" Type="AccountingKnowledgeDBModel.Store.ResumeTheme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resume">
+              <PropertyRef Name="ResumeID" />
+            </Principal>
+            <Dependent Role="ResumeTheme">
+              <PropertyRef Name="ResumeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResumeTheme_Theme">
+          <End Role="Theme" Type="AccountingKnowledgeDBModel.Store.Theme" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ResumeTheme" Type="AccountingKnowledgeDBModel.Store.ResumeTheme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Theme">
+              <PropertyRef Name="ThemeID" />
+            </Principal>
+            <Dependent Role="ResumeTheme">
+              <PropertyRef Name="ThemeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Skill_Skill">
+          <End Role="SkillGroup" Type="AccountingKnowledgeDBModel.Store.SkillGroup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Skill" Type="AccountingKnowledgeDBModel.Store.Skill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillGroup">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Skill">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Theme_FieldOfKnowledge">
+          <End Role="FieldOfKnowledge" Type="AccountingKnowledgeDBModel.Store.FieldOfKnowledge" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Theme" Type="AccountingKnowledgeDBModel.Store.Theme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FieldOfKnowledge">
+              <PropertyRef Name="FieldID" />
+            </Principal>
+            <Dependent Role="Theme">
+              <PropertyRef Name="FieldID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Theme_SkillGroup">
+          <End Role="SkillGroup" Type="AccountingKnowledgeDBModel.Store.SkillGroup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Theme" Type="AccountingKnowledgeDBModel.Store.Theme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillGroup">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Theme">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AccountingKnowledgeDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AkDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Client" EntityType="AccountingKnowledgeDBModel.EntityClient" />
+          <EntitySet Name="FieldOfKnowledge" EntityType="AccountingKnowledgeDBModel.EntityField" />
+          <EntitySet Name="Privilegy" EntityType="AccountingKnowledgeDBModel.EntityPrivilegy" />
+          <EntitySet Name="Resume" EntityType="AccountingKnowledgeDBModel.EntityResume" />
+          <EntitySet Name="ResumeTheme" EntityType="AccountingKnowledgeDBModel.EntityResumeTheme" />
+          <EntitySet Name="Skill" EntityType="AccountingKnowledgeDBModel.EntitySkill" />
+          <EntitySet Name="SkillGroup" EntityType="AccountingKnowledgeDBModel.EntitySkillGroup" />
+          <EntitySet Name="Theme" EntityType="AccountingKnowledgeDBModel.EntityTheme" />
+          <AssociationSet Name="FK_Client_Privilegy" Association="AccountingKnowledgeDBModel.FK_Client_Privilegy">
+            <End Role="Privilegy" EntitySet="Privilegy" />
+            <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resume_Client" Association="AccountingKnowledgeDBModel.FK_Resume_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Resume" EntitySet="Resume" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Theme_FieldOfKnowledge" Association="AccountingKnowledgeDBModel.FK_Theme_FieldOfKnowledge">
+            <End Role="FieldOfKnowledge" EntitySet="FieldOfKnowledge" />
+            <End Role="Theme" EntitySet="Theme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResumeTheme_Resume" Association="AccountingKnowledgeDBModel.FK_ResumeTheme_Resume">
+            <End Role="Resume" EntitySet="Resume" />
+            <End Role="ResumeTheme" EntitySet="ResumeTheme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResumeTheme_Theme" Association="AccountingKnowledgeDBModel.FK_ResumeTheme_Theme">
+            <End Role="Theme" EntitySet="Theme" />
+            <End Role="ResumeTheme" EntitySet="ResumeTheme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Skill_Skill" Association="AccountingKnowledgeDBModel.FK_Skill_Skill">
+            <End Role="SkillGroup" EntitySet="SkillGroup" />
+            <End Role="Skill" EntitySet="Skill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Theme_SkillGroup" Association="AccountingKnowledgeDBModel.FK_Theme_SkillGroup">
+            <End Role="SkillGroup" EntitySet="SkillGroup" />
+            <End Role="Theme" EntitySet="Theme" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="EntityClient">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Pass" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SecondName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BirthDay" Type="DateTime" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PrivilegyID" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Privilegy" Relationship="AccountingKnowledgeDBModel.FK_Client_Privilegy" FromRole="Client" ToRole="Privilegy" />
+          <NavigationProperty Name="Resume" Relationship="AccountingKnowledgeDBModel.FK_Resume_Client" FromRole="Client" ToRole="Resume" />
+        </EntityType>
+        <EntityType Name="EntityField">
+          <Key>
+            <PropertyRef Name="FieldID" />
+          </Key>
+          <Property Name="FieldID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Theme" Relationship="AccountingKnowledgeDBModel.FK_Theme_FieldOfKnowledge" FromRole="FieldOfKnowledge" ToRole="Theme" />
+        </EntityType>
+        <EntityType Name="EntityPrivilegy">
+          <Key>
+            <PropertyRef Name="PrivilegyID" />
+          </Key>
+          <Property Name="PrivilegyID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Client" Relationship="AccountingKnowledgeDBModel.FK_Client_Privilegy" FromRole="Privilegy" ToRole="Client" />
+        </EntityType>
+        <EntityType Name="EntityResume">
+          <Key>
+            <PropertyRef Name="ResumeID" />
+          </Key>
+          <Property Name="ResumeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Client" Relationship="AccountingKnowledgeDBModel.FK_Resume_Client" FromRole="Resume" ToRole="Client" />
+          <NavigationProperty Name="ResumeTheme" Relationship="AccountingKnowledgeDBModel.FK_ResumeTheme_Resume" FromRole="Resume" ToRole="ResumeTheme" />
+        </EntityType>
+        <EntityType Name="EntityResumeTheme">
+          <Key>
+            <PropertyRef Name="ResumeThemeID" />
+          </Key>
+          <Property Name="ResumeThemeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResumeID" Type="Int32" Nullable="false" />
+          <Property Name="SkillID" Type="Int32" Nullable="false" />
+          <Property Name="ThemeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Resume" Relationship="AccountingKnowledgeDBModel.FK_ResumeTheme_Resume" FromRole="ResumeTheme" ToRole="Resume" />
+          <NavigationProperty Name="Theme" Relationship="AccountingKnowledgeDBModel.FK_ResumeTheme_Theme" FromRole="ResumeTheme" ToRole="Theme" />
+        </EntityType>
+        <EntityType Name="EntitySkill">
+          <Key>
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="SkillGroup" Relationship="AccountingKnowledgeDBModel.FK_Skill_Skill" FromRole="Skill" ToRole="SkillGroup" />
+        </EntityType>
+        <EntityType Name="EntitySkillGroup">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Skill" Relationship="AccountingKnowledgeDBModel.FK_Skill_Skill" FromRole="SkillGroup" ToRole="Skill" />
+          <NavigationProperty Name="Theme" Relationship="AccountingKnowledgeDBModel.FK_Theme_SkillGroup" FromRole="SkillGroup" ToRole="Theme" />
+        </EntityType>
+        <EntityType Name="EntityTheme">
+          <Key>
+            <PropertyRef Name="ThemeID" />
+          </Key>
+          <Property Name="ThemeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FieldID" Type="Int32" Nullable="false" />
+          <Property Name="GroupID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="FieldOfKnowledge" Relationship="AccountingKnowledgeDBModel.FK_Theme_FieldOfKnowledge" FromRole="Theme" ToRole="FieldOfKnowledge" />
+          <NavigationProperty Name="ResumeTheme" Relationship="AccountingKnowledgeDBModel.FK_ResumeTheme_Theme" FromRole="Theme" ToRole="ResumeTheme" />
+          <NavigationProperty Name="SkillGroup" Relationship="AccountingKnowledgeDBModel.FK_Theme_SkillGroup" FromRole="Theme" ToRole="SkillGroup" />
+        </EntityType>
+        <Association Name="FK_Client_Privilegy">
+          <End Role="Privilegy" Type="AccountingKnowledgeDBModel.EntityPrivilegy" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Client" Type="AccountingKnowledgeDBModel.EntityClient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Privilegy">
+              <PropertyRef Name="PrivilegyID" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="PrivilegyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resume_Client">
+          <End Role="Client" Type="AccountingKnowledgeDBModel.EntityClient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Resume" Type="AccountingKnowledgeDBModel.EntityResume" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientID" />
+            </Principal>
+            <Dependent Role="Resume">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Theme_FieldOfKnowledge">
+          <End Role="FieldOfKnowledge" Type="AccountingKnowledgeDBModel.EntityField" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Theme" Type="AccountingKnowledgeDBModel.EntityTheme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FieldOfKnowledge">
+              <PropertyRef Name="FieldID" />
+            </Principal>
+            <Dependent Role="Theme">
+              <PropertyRef Name="FieldID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResumeTheme_Resume">
+          <End Role="Resume" Type="AccountingKnowledgeDBModel.EntityResume" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ResumeTheme" Type="AccountingKnowledgeDBModel.EntityResumeTheme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resume">
+              <PropertyRef Name="ResumeID" />
+            </Principal>
+            <Dependent Role="ResumeTheme">
+              <PropertyRef Name="ResumeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResumeTheme_Theme">
+          <End Role="Theme" Type="AccountingKnowledgeDBModel.EntityTheme" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ResumeTheme" Type="AccountingKnowledgeDBModel.EntityResumeTheme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Theme">
+              <PropertyRef Name="ThemeID" />
+            </Principal>
+            <Dependent Role="ResumeTheme">
+              <PropertyRef Name="ThemeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Skill_Skill">
+          <End Role="SkillGroup" Type="AccountingKnowledgeDBModel.EntitySkillGroup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Skill" Type="AccountingKnowledgeDBModel.EntitySkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillGroup">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Skill">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Theme_SkillGroup">
+          <End Role="SkillGroup" Type="AccountingKnowledgeDBModel.EntitySkillGroup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Theme" Type="AccountingKnowledgeDBModel.EntityTheme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillGroup">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Theme">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AccountingKnowledgeDBModelStoreContainer" CdmEntityContainer="AkDbEntities">
+          <EntitySetMapping Name="Client"><EntityTypeMapping TypeName="AccountingKnowledgeDBModel.EntityClient"><MappingFragment StoreEntitySet="Client">
+            <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+            <ScalarProperty Name="Login" ColumnName="Login" />
+            <ScalarProperty Name="Pass" ColumnName="Pass" />
+            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+            <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+            <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+            <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="PrivilegyID" ColumnName="PrivilegyID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FieldOfKnowledge"><EntityTypeMapping TypeName="AccountingKnowledgeDBModel.EntityField"><MappingFragment StoreEntitySet="FieldOfKnowledge">
+            <ScalarProperty Name="FieldID" ColumnName="FieldID" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Privilegy"><EntityTypeMapping TypeName="AccountingKnowledgeDBModel.EntityPrivilegy"><MappingFragment StoreEntitySet="Privilegy">
+            <ScalarProperty Name="PrivilegyID" ColumnName="PrivilegyID" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Resume"><EntityTypeMapping TypeName="AccountingKnowledgeDBModel.EntityResume"><MappingFragment StoreEntitySet="Resume">
+            <ScalarProperty Name="ResumeID" ColumnName="ResumeID" />
+            <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ResumeTheme"><EntityTypeMapping TypeName="AccountingKnowledgeDBModel.EntityResumeTheme"><MappingFragment StoreEntitySet="ResumeTheme">
+            <ScalarProperty Name="ResumeThemeID" ColumnName="ResumeThemeID" />
+            <ScalarProperty Name="ResumeID" ColumnName="ResumeID" />
+            <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+            <ScalarProperty Name="ThemeID" ColumnName="ThemeID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Skill"><EntityTypeMapping TypeName="AccountingKnowledgeDBModel.EntitySkill"><MappingFragment StoreEntitySet="Skill">
+            <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+            <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SkillGroup"><EntityTypeMapping TypeName="AccountingKnowledgeDBModel.EntitySkillGroup"><MappingFragment StoreEntitySet="SkillGroup">
+            <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Theme"><EntityTypeMapping TypeName="AccountingKnowledgeDBModel.EntityTheme"><MappingFragment StoreEntitySet="Theme">
+            <ScalarProperty Name="ThemeID" ColumnName="ThemeID" />
+            <ScalarProperty Name="FieldID" ColumnName="FieldID" />
+            <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="EntityDataModel">
+        <EntityTypeShape EntityType="AccountingKnowledgeDBModel.EntityClient" Width="1.5" PointX="3.5" PointY="0.625" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="AccountingKnowledgeDBModel.EntityField" Width="1.5" PointX="0.5" PointY="3.125" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="AccountingKnowledgeDBModel.EntityPrivilegy" Width="1.5" PointX="5.625" PointY="0.75" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="AccountingKnowledgeDBModel.EntityResume" Width="1.5" PointX="0.5" PointY="0.625" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="AccountingKnowledgeDBModel.EntityResumeTheme" Width="1.5" PointX="0.5" PointY="1.5" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="AccountingKnowledgeDBModel.EntitySkill" Width="1.5" PointX="3.75" PointY="2.875" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="AccountingKnowledgeDBModel.EntitySkillGroup" Width="1.5" PointX="3.75" PointY="2.125" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="AccountingKnowledgeDBModel.EntityTheme" Width="1.5" PointX="0.5" PointY="2.375" Height="0.4" IsExpanded="false" />
+        <AssociationConnector Association="AccountingKnowledgeDBModel.FK_Client_Privilegy" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.625" PointY="0.8875" />
+          <ConnectorPoint PointX="5" PointY="0.8875" />
+        </AssociationConnector>
+        <AssociationConnector Association="AccountingKnowledgeDBModel.FK_Resume_Client" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.5" PointY="0.825" />
+          <ConnectorPoint PointX="2" PointY="0.825" />
+        </AssociationConnector>
+        <AssociationConnector Association="AccountingKnowledgeDBModel.FK_Theme_FieldOfKnowledge" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.25" PointY="3.125" />
+          <ConnectorPoint PointX="1.25" PointY="2.775" />
+        </AssociationConnector>
+        <AssociationConnector Association="AccountingKnowledgeDBModel.FK_ResumeTheme_Resume" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.25" PointY="1.025" />
+          <ConnectorPoint PointX="1.25" PointY="1.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="AccountingKnowledgeDBModel.FK_ResumeTheme_Theme" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.25" PointY="2.375" />
+          <ConnectorPoint PointX="1.25" PointY="1.9" />
+        </AssociationConnector>
+        <AssociationConnector Association="AccountingKnowledgeDBModel.FK_Skill_Skill" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.525" />
+          <ConnectorPoint PointX="4.5" PointY="2.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="AccountingKnowledgeDBModel.FK_Theme_SkillGroup" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="2.45" />
+          <ConnectorPoint PointX="2" PointY="2.45" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

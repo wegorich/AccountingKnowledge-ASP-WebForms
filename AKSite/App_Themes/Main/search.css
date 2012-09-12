@@ -1,0 +1,77 @@
+﻿.search, .adminAdd .themeGroup
+{
+    background: #F7F7F7;
+    padding: 5px;
+    border: 1px solid #DAE1E8;
+    border-top: none;
+}
+.search .btn
+{
+    float: right;
+}
+.search input[type=text]
+{
+    width: 70%;
+    border: 1px solid #C0CAD5;
+    font-family: tahoma, tahoma, verdana, arial, sans-serif, Lucida Sans;
+    font-size: 11px;
+    margin: 0px;
+    background: #FFF url(img/search.png) no-repeat 5px 6px;
+    outline: none;
+    padding: 5px 20px;
+}
+.searchMenu span
+{
+    display: block;
+    padding: 4px 4px 4px 0;
+    font-weight: bold;
+    cursor: default;
+    color: #555;
+    margin: 5px 0 4px;
+}
+.searchMenu select
+{
+    padding: 2px 0px;
+    font-size: 11px;
+    color: Gray;
+}
+.searchMenu option
+{
+    display: block;
+    padding: 3px 0px;
+    color: Black;
+}
+.searchMenu
+{
+    margin: -10px 0px 0px -4px;
+    background: #F7F7F7;
+    padding:0px 10px 10px 10px;
+}
+.searchMenu .sortList
+{
+    display: block;
+    width: 125px !important;
+    margin-bottom: 3px;
+}
+.searchMenu .center
+{
+    line-height: 22px;
+    text-align: center;
+    width: 10px;
+}
+.searchMenu .years
+{
+    float: left;
+}
+.searchMenu .age
+{
+    display: block;
+}
+.searchMenu .age::after
+{
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}

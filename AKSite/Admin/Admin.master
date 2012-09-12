@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NestedMain.master" AutoEventWireup="true"
+    CodeBehind="Admin.master.cs" Inherits="AKSite.Admin.Admin" %>
+
+<asp:Content ID="pageTitle" ContentPlaceHolderID="title" runat="server">
+    Админка:
+    <asp:ContentPlaceHolder ID="adminTitle" runat="server" />
+</asp:Content>
+<asp:Content ID="pageHead" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript" src="../Script/MyDialogs.js"></script>
+</asp:Content>
+<asp:Content ID="pageLeft" ContentPlaceHolderID="left" runat="server">
+    <asp:SiteMapDataSource ID="SiteMapAdmin" runat="server" ShowStartingNode="False"
+        StartingNodeUrl="~/Admin/" />
+    <asp:Menu ID="subMenu" runat="server" DataSourceID="SiteMapAdmin">
+    </asp:Menu>
+</asp:Content>
+<asp:Content ID="pageContent" ContentPlaceHolderID="cont" runat="server">
+<asp:ContentPlaceHolder ID="adminCont" runat="server" />
+</asp:Content>

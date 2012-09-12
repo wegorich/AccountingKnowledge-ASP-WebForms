@@ -1,0 +1,34 @@
+﻿#cont_left_subMenu
+{
+}
+#cont_left_subMenu ul
+{
+    display: block;
+    list-style: none;
+    margin: 0px 0px 10px;
+    padding: 0px;
+}
+#cont_left_subMenu  a.static.selected
+{
+    color: #a8a8a8;
+}
+#cont_left_subMenu ul li
+{
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+#cont_left_subMenu ul li a
+{
+    border: 0;
+    width:140px;
+    background: white;
+    border: 1px solid transparent;
+    display: block;
+    padding: 4px 3px 4px 6px;
+}
+#cont_left_subMenu ul li a:hover
+{
+    text-decoration: none;
+    background: whiteSmoke;
+    border-color: #E5E5E5;
+}

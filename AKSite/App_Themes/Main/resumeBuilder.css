@@ -1,0 +1,15 @@
+﻿.stepMenu
+{
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0px;
+    empty-cells: show;
+}
+.stepMenu a:hover
+{
+    text-decoration: none;
+}
+.stepButton
+{
+    margin: 20px;
+}
